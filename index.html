@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PIMS Layout Template</title>
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://js.arcgis.com/4.30/esri/themes/light/main.css"
+  />
+
+  <script src="https://js.arcgis.com/4.30/"></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <!-- MAP AREA (ArcGIS will go here later) -->
+    <div id="mapFrame">
+        <div id="mapInner">
+            <div id="map"></div>
+         </div>
+    </div>
+
+    <!-- TITLE BLOCK -->
+    <div id="titleBlock">
+
+    <div class="tb-section left">
+        <div class="tb-header">PREPARED FOR:</div>
+        <div class="tb-input" contenteditable="true"></div>
+    </div>
+
+    <div class="tb-section notes">
+        <div class="tb-header">NOTES:</div>
+        <div class="tb-input" contenteditable="true"></div>
+    </div>
+
+      <!-- CENTER -->
+     
+    <div class="tb-section center">
+        <div class="tb-row" contenteditable="true">PROJECT NAME</div>
+        <div class="tb-row" contenteditable="true">LOCATION</div>
+        <div class="tb-title" contenteditable="true">MAP NAME</div>
+    </div>
+    
+
+      <!-- LOGO -->
+      <div class="tb-section logo">
+        <img src="PIMS-logo-clear jt edit.jpg" alt="Logo">
+      </div>
+
+      <!-- METADATA -->
+    <div class="tb-section meta">
+        <div class="meta-row"><span>PROJECT NO:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>FILE NAME:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>DRAWING NO:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>FIELD BOOK NO:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>DRAWN BY:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>CHECKED BY:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>DATE:</span><span contenteditable="true"></span></div>
+        <div class="meta-row"><span>REVISED:</span><span contenteditable="true"></span></div>
+    </div>
+
+      <!-- NORTH ARROW -->
+     <div class="tb-section north">
+        <div id="northArrow">
+            <svg id="northSvg" width="70" height="140" viewBox="-5 0 40 40">
+
+            <!-- Arrow head (black side) -->
+            <polygon points="15,5 22,35 15,28" fill="black"></polygon>
+
+            <!-- Arrow head (white side) -->
+            <polygon points="15,5 8,35 15,28" fill="white" stroke="black" stroke-width="1.2"></polygon>
+           
+            </svg>
+        </div>
+    </div>
+
+    </div>
+
+  </div>
+
+<script src="map.js"></script>
+
+</body>
+</html>
