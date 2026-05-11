@@ -21,7 +21,7 @@ require([
 
   const scaleBar = new ScaleBar({
     view: view,
-    unit: "non-metric",
+    unit: "imperial",
   });
 
   view.ui.add(scaleBar, {
