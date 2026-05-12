@@ -13,8 +13,6 @@
     href="https://js.arcgis.com/4.30/esri/themes/light/main.css"
   />
 
-  <script src="https://js.arcgis.com/4.30/"></script>
-
 </head>
 
 <body>
@@ -86,7 +84,26 @@
 
   </div>
 
-<script src="map.js"></script>
+  <button id="exportBtn">Export PDF</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script src="https://js.arcgis.com/4.30/"></script>
+
+  <script>
+    window._savedDefine = window.define;
+    window.define = undefined;
+  </script>
+
+  <script src="jspdf.umd.min.js"></script>
+
+  <script>
+    window.define = window._savedDefine;
+  </script>
+
+  <script src="map.js"></script>
+
+  <script src="export.js"></script>
 
 </body>
 </html>
