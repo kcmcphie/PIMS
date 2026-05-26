@@ -23,18 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const map = new Map({
-      basemap: {
-        baseLayers: [],
-        referenceLayers: [labelsLayer]
-      }
+      basemap: {}
+    });
+
+    const terrainLayer = new TileLayer({
+      url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer",
+      opacity: 0.85
     });
 
     const hillshadeLayer = new TileLayer({
-      url: "https://services.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer"
-
+      url: "https://services.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer",
+      opacity: 0.75,
+      blendMode: "multiply"
     });
 
-    const countriesLayer = new GeoJSONLayer({
+    const terrainTintLayer = new GeoJSONLayer({
       url: "./world.geojson",
 
       renderer: {
@@ -43,17 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
         symbol: {
           type: "simple-fill",
 
-          color: [194, 194, 194, 0.35],
+          color: [61, 108, 62, 0.35],
 
           outline: {
-            color: [194, 194, 194],
-            width: 0.75
+            color: [0, 0, 0, 0],
+            width: 0
           }
-
         }
-    }
+      }
+    });
 
-    })
+    const mountainTintLayer = new GeoJSONLayer({
+      url: "./world.geojson",
+
+      renderer: {
+        type: "simple",
+
+        symbol: {
+          type: "simple-fill",
+
+          color: [61, 108, 62, 0.45],
+
+          outline: {
+            color: [0, 0, 0, 0],
+            width: 0
+          }
+        }
+      },
+
+      blendMode: "multiply"
+    });
 
     const statesLayer = new GeoJSONLayer({
       url: "./states.geojson",
@@ -64,60 +86,32 @@ document.addEventListener("DOMContentLoaded", () => {
         symbol: {
           type: "simple-fill",
 
-          color: [61, 109, 63, 0.35],
+          color: [0, 0, 0, 0],
 
           outline: {
-            color: [73, 73, 73],
-            width: 0.75
+            color: [105, 105, 105, 1],
+            width: 0.5
           }
         }
-      }
+      },
+
+      blendMode: "multiply"
     });
 
-    const riversLayer = new GeoJSONLayer({
-      url: "./rivers.geojson",
-
-      renderer: {
-        type: "simple",
-
-        symbol: {
-          type: "simple-line",
-
-          color: [0, 98, 163, 0.3],
-
-          width: 1.2
-        }
-      }
-    });
-
-    const NAriversLayer = new GeoJSONLayer({
-      url: "./NArivers.geojson",
-
-      renderer: {
-        type: "simple",
-
-        symbol: {
-          type: "simple-line",
-
-          color: [0, 98, 163, 0.3],
-
-          width: 1.2
-        }
-      }
-    });
-
-    map.add(hillshadeLayer);
-    map.add(countriesLayer);
-    map.add(statesLayer);
-    map.add(riversLayer);
-    map.add(NAriversLayer);
 
     window.view = new MapView({
       container: "map",
       map: map,
 
-      center: [-107.5512, 42.9993],
-      zoom: 7,
+      extent: {
+        xmin: -111.1,
+        ymin: 40.8,
+        xmax: -103.9,
+        ymax: 45.2,
+        spatialReference: {
+          wkid: 4326
+        }
+      },
 
       spatialReference: {
         wkid: 3857
@@ -149,6 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Map fully ready");
 
     });
+
+    map.add(terrainLayer);
+    map.add(terrainTintLayer);
+    map.add(hillshadeLayer);
+    map.add(mountainTintLayer);
+    map.add(statesLayer);
+    map.add(labelsLayer);
 
   });
 
