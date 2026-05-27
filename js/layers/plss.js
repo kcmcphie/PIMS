@@ -8,7 +8,7 @@ define([
 
     id: "butte_plss",
 
-    visible: false,
+    visible: true,
 
     url: "./data/Butte_MT_PLSS_Sections.geojson",
 
@@ -54,14 +54,6 @@ define([
     labelsVisible: true,
 
     minScale: 10000000
-
-  });
-
-  butte_plss.when(() => {
-
-    butte_plss.fields.forEach(field => {
-      console.log(field.name);
-    });
 
   });
 

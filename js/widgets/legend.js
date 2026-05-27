@@ -12,6 +12,10 @@ define([
         {
           layer: view.map.findLayerById("butte_plss"),
           title: "PLSS Sections"
+        },
+        {
+          layer: view.map.findLayerById("head_frames"),
+          title: "Headframes"
         }
       ]
     });

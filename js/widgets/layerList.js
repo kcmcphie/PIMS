@@ -14,7 +14,7 @@ define([
 
         const visibleLayers = [
           "PLSS Sections",
-          "Landcover"
+          "Headframes"
         ];
 
         if (!visibleLayers.includes(item.title)) {
