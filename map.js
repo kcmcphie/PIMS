@@ -22,6 +22,41 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
+  labelsLayer.load().then(() => {
+
+    const style = labelsLayer.currentStyleInfo.style;
+
+    style.layers.forEach(layer => {
+
+      if (
+        layer.type === "symbol" &&
+        layer.layout &&
+        layer.layout["text-field"]
+      ) {
+
+        // Bigger labels
+        layer.layout["text-size"] = [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          0, 10,
+          6, 14,
+          10, 18
+        ];
+
+        // Darker labels
+        layer.paint["text-color"] = "#111111";
+
+        // Stronger halo
+        layer.paint["text-halo-color"] = "#ffffff";
+        layer.paint["text-halo-width"] = 2;
+        layer.paint["text-halo-blur"] = 0.5;
+      }
+    });
+
+    labelsLayer.style = style;
+  });
+
     const map = new Map({
       basemap: {}
     });
@@ -90,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           outline: {
             color: [105, 105, 105, 1],
-            width: 0.5
+            width: 0.75
           }
         }
       },
@@ -103,19 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
       container: "map",
       map: map,
 
-      extent: {
-        xmin: -111.1,
-        ymin: 40.8,
-        xmax: -103.9,
-        ymax: 45.2,
-        spatialReference: {
-          wkid: 4326
-        }
-      },
-
-      spatialReference: {
-        wkid: 3857
-      },
+      center: [-112.53, 46.01],
+      zoom: 15,
 
       constraints: {
         rotationEnabled: false
