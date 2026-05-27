@@ -102,7 +102,7 @@ html, body {
 
 .tb-row[contenteditable]:focus,
 .tb-title[contenteditable]:focus {
-  background: #eef6ff;
+  background: transparent;
 }
 
 .tb-input {
@@ -207,10 +207,6 @@ html, body {
 
   white-space: normal;
   overflow-wrap: break-word;
-}
-
-.meta-row span[contenteditable]:focus {
-  background: #eef6ff;
 }
 
 .north {
