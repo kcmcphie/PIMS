@@ -1,20 +1,38 @@
 define([
-  "esri/widgets/LayerList"
-], function(LayerList) {
+  "esri/widgets/LayerList",
+  "esri/widgets/Expand"
+], function(LayerList, Expand) {
 
   return function(view) {
 
-    return new LayerList({
+    const layerList = new LayerList({
       view: view,
 
       listItemCreatedFunction: (event) => {
 
         const item = event.item;
 
-        if (item.title !== "PLSS Sections") {
+        const visibleLayers = [
+          "PLSS Sections",
+          "Landcover"
+        ];
+
+        if (!visibleLayers.includes(item.title)) {
           item.hidden = true;
         }
       }
+    });
+
+    return new Expand({
+      view: view,
+
+      content: layerList,
+
+      expanded: false,
+
+      expandTooltip: "Layers",
+
+      expandIcon: "layers"
     });
 
   };

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
+    "./js/widgets/legend.js",
 
     "./js/config/view.js"
 
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createScaleBar,
     createLayerList,
+    createLegend,
 
     viewConfig
 
@@ -51,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     view.ui.add(createScaleBar(view), "bottom-left");
     view.ui.add(createLayerList(view), "top-right");
+    view.ui.add(createLegend(view), "bottom-right");
 
   });
 

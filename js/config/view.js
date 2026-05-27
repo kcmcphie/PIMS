@@ -4,7 +4,7 @@ define([], function() {
 
     center: [-112.53, 46.01],
 
-    zoom: 15,
+    zoom: 12,
 
     constraints: {
       rotationEnabled: false

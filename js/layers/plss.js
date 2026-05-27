@@ -6,6 +6,10 @@ define([
 
     title: "PLSS Sections",
 
+    id: "butte_plss",
+
+    visible: false,
+
     url: "./data/Butte_MT_PLSS_Sections.geojson",
 
     renderer: {
@@ -49,7 +53,7 @@ define([
 
     labelsVisible: true,
 
-    minScale: 100000
+    minScale: 10000000
 
   });
 
