@@ -16,6 +16,10 @@ define([
         {
           layer: view.map.findLayerById("head_frames"),
           title: "Headframes"
+        },
+        {
+          layer: view.map.findLayerById("parcels"),
+          title: "Silver Bow Parcels"
         }
       ]
     });

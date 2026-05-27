@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/states.js",
     "./js/layers/plss.js",
     "./js/layers/headframes.js",
+    "./js/layers/sbparcels.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     statesLayer,
     butte_plss,
     headframesLayer,
+    parcelsLayer,
 
     createScaleBar,
     createLayerList,
@@ -41,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     map.add(hillshadeLayer);
     map.add(statesLayer);
     map.add(butte_plss);
+    map.add(parcelsLayer);
     map.add(headframesLayer);
     map.add(labelsLayer);
   
