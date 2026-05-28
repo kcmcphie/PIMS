@@ -15,7 +15,8 @@ define([
         const visibleLayers = [
           "PLSS Sections",
           "Headframes",
-          "Silverbow Parcels"
+          "Silverbow Parcels",
+          "Contours"
         ];
 
         if (!visibleLayers.includes(item.title)) {
