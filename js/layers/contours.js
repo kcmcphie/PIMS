@@ -17,7 +17,7 @@ define([
       symbol: {
         type: "simple-line",
 
-        color: [120, 120, 120, 255],
+        color: [59, 59, 59, 1],
 
         width: 0.5
       }

@@ -21,11 +21,11 @@ define([
 
         size: 6,
 
-        color: [0, 120, 255, 230],
+        color: [252, 252, 0, 1],
 
         outline: {
-          color: [255, 255, 255, 255],
-          width: 1
+          color: [105, 105, 105, 1],
+          width: 1.5
         }
       }
     }

@@ -20,6 +20,10 @@ define([
         {
           layer: view.map.findLayerById("parcels"),
           title: "Silver Bow Parcels"
+        }, 
+        {
+          layer: view.map.findLayerById("contours"),
+          title: "10m Contours"
         }
       ]
     });

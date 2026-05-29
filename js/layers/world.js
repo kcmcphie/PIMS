@@ -3,11 +3,11 @@ define([
 ], function(GeoJSONLayer) {
 
   return new GeoJSONLayer({
-    title: "Silverbow Parcels",
-    
-    id: "parcels",
+    title: "World",
 
-    url: "./data/silverbow_parcels.geojson",
+    id: "world",
+
+    url: "./data/world.geojson",
 
     renderer: {
       type: "simple",
@@ -15,10 +15,10 @@ define([
       symbol: {
         type: "simple-fill",
 
-        color: [0, 0, 0, 0],
+        color: [61, 108, 62, 0.15],
 
         outline: {
-          color: [61, 108, 62, 1],
+          color: [105, 105, 105, 1],
           width: 0.75
         }
       }

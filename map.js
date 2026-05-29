@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/labels.js",
     "./js/layers/hillshade.js",
     "./js/layers/states.js",
+    "./js/layers/world.js",
     "./js/layers/plss.js",
     "./js/layers/headframes.js",
     "./js/layers/sbparcels.js",
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     labelsLayer,
     hillshadeLayer,
     statesLayer,
+    worldLayer,
     butte_plss,
     headframesLayer,
     parcelsLayer,
@@ -39,10 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ) => {
 
     const map = new Map({
-      basemap: {}
+      basemap: "oceans"
     });
 
     map.add(hillshadeLayer);
+    map.add(worldLayer);
     map.add(parcelsLayer);
     map.add(contoursLayer);
     map.add(statesLayer);
@@ -57,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.view = view;
+
+    view.when(() => {
+      map.basemap.referenceLayers.removeAll();
+    });
 
     window.view.ui.move("attribution", "top-right");
 
