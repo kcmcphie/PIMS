@@ -9,7 +9,7 @@ define([
 
     opacity: 0.6,
 
-    blendMode: "overlay"
+    blendMode: "multiply"
   });
 
 });

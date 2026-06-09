@@ -8,7 +8,7 @@ define([
 
     id: "butte_plss",
 
-    visible: true,
+    visible: false,
 
     url: "./data/Butte_MT_PLSS_Sections.geojson",
 

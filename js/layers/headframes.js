@@ -9,7 +9,7 @@ define([
 
     url: "./data/headframes.geojson",
 
-    visible: true,
+    visible: false,
 
     renderer: {
       type: "simple",

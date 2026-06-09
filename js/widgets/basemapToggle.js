@@ -7,19 +7,13 @@ define([], function() {
     button.innerHTML = "Toggle Basemap";
     button.className = "esri-widget esri-button";
 
-    let satelliteEnabled = false;
+    let customBasemapEnabled = true;
 
     button.addEventListener("click", () => {
 
-      satelliteEnabled = !satelliteEnabled;
+      customBasemapEnabled = !customBasemapEnabled;
 
-      if (satelliteEnabled) {
-        view.map.basemap = "satellite";
-        customBasemap.visible = false;
-      } else {
-        view.map.basemap = "oceans";
-        customBasemap.visible = true;
-      }
+      customBasemap.visible = customBasemapEnabled;
 
     });
 

@@ -9,6 +9,8 @@ define([
 
     url: "./data/silverbow_parcels.geojson",
 
+    visible: false,
+
     renderer: {
       type: "simple",
 

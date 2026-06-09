@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/hillshade.js",
     "./js/layers/states.js",
     "./js/layers/world.js",
+    "./js/layers/oceans.js",
+    "./js/layers/lakes.js",
+    "./js/layers/rivers.js",
+    "./js/layers/roads.js",
     "./js/layers/plss.js",
     "./js/layers/headframes.js",
     "./js/layers/sbparcels.js",
@@ -30,6 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
     hillshadeLayer,
     statesLayer,
     worldLayer,
+    oceansLayer,
+    lakesLayer,
+    riversLayer,
+    roadsLayer,
     butte_plss,
     headframesLayer,
     parcelsLayer,
@@ -45,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) => {
 
     const map = new Map({
-      basemap: "oceans"
+      basemap: "satellite"
     });
 
     const customBasemap = new GroupLayer({
@@ -53,19 +61,22 @@ document.addEventListener("DOMContentLoaded", () => {
       visibilityMode: "independent",
       visible: true,
       layers: [
-        hillshadeLayer,
         worldLayer,
+        hillshadeLayer,
+        oceansLayer,
+        riversLayer,
+        roadsLayer,
         statesLayer,
-        labelsLayer
+        lakesLayer,
       ]
     });
-
 
     map.add(customBasemap);
     map.add(parcelsLayer);
     map.add(contoursLayer);
     map.add(butte_plss);
     map.add(headframesLayer);
+    map.add(labelsLayer);
 
   
     const view = new MapView({
