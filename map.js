@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   require([
     "esri/Map",
     "esri/views/MapView",
+    "esri/layers/GroupLayer",
 
     "./js/layers/labels.js",
     "./js/layers/hillshade.js",
@@ -16,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
     "./js/widgets/legend.js",
+    "./js/widgets/basemapToggle.js",
 
     "./js/config/view.js"
 
   ], (
     Map,
     MapView,
+    GroupLayer,
 
     labelsLayer,
     hillshadeLayer,
@@ -35,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createScaleBar,
     createLayerList,
     createLegend,
+    createBasemapToggle,
 
     viewConfig
 
@@ -44,14 +48,25 @@ document.addEventListener("DOMContentLoaded", () => {
       basemap: "oceans"
     });
 
-    map.add(hillshadeLayer);
-    map.add(worldLayer);
+    const customBasemap = new GroupLayer({
+      title: "Custom Basemap",
+      visibilityMode: "independent",
+      visible: true,
+      layers: [
+        hillshadeLayer,
+        worldLayer,
+        statesLayer,
+        labelsLayer
+      ]
+    });
+
+
+    map.add(customBasemap);
     map.add(parcelsLayer);
     map.add(contoursLayer);
-    map.add(statesLayer);
     map.add(butte_plss);
     map.add(headframesLayer);
-    map.add(labelsLayer);
+
   
     const view = new MapView({
       ...viewConfig,
@@ -70,6 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
     view.ui.add(createScaleBar(view), "bottom-left");
     view.ui.add(createLayerList(view), "top-right");
     view.ui.add(createLegend(view), "bottom-right");
+    
+    view.ui.add(
+      createBasemapToggle(view, customBasemap),
+      "top-left"
+    );
+
 
   });
 
