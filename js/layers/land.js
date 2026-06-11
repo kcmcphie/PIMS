@@ -15,7 +15,7 @@ define([
       symbol: {
         type: "simple-fill",
 
-        color: [255, 255, 255, 1],
+        color: [61, 108, 62, 0.65],
 
         outline: {
           color: [105, 105, 105, 1],

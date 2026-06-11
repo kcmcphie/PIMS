@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/hillshade.js",
     "./js/layers/states.js",
     "./js/layers/world.js",
+    "./js/layers/land.js",
     "./js/layers/oceans.js",
     "./js/layers/lakes.js",
     "./js/layers/rivers.js",
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hillshadeLayer,
     statesLayer,
     worldLayer,
+    landLayer,
     oceansLayer,
     lakesLayer,
     riversLayer,
@@ -62,10 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
       visible: true,
       layers: [
         worldLayer,
+        landLayer,
         hillshadeLayer,
         oceansLayer,
         riversLayer,
-        roadsLayer,
+        //roadsLayer,
         statesLayer,
         lakesLayer,
       ]
