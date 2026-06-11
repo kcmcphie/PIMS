@@ -24,8 +24,9 @@ define([
     },
 
     labelingInfo: [{
+
       labelExpressionInfo: {
-        expression: "$feature.Contour"
+        expression: "Round($feature.Contour * 3.28084, 0)"
       },
 
       symbol: {
