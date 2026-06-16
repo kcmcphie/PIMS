@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/butte/butte_blocks/emmablock_poly.js",
     "./js/layers/butte/butte_blocks/emmablock_point.js",
     "./js/layers/butte/butte_blocks/bjs_ferrylane_poly.js",
+    "./js/layers/butte/butte_blocks/goldsmith_poly.js",
+    "./js/layers/butte/butte_blocks/goldsmith_point.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -51,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     emmaPoly,
     emmaPoint,
     ferrylanePoly,
+    goldPoly,
+    goldPoint,
 
     createScaleBar,
     createLayerList,
@@ -90,12 +94,22 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     })
 
+    const goldBlock = new GroupLayer({
+      title: "Goldsmith Block",
+      visibilityMode: "independent",
+      layers: [
+        goldPoly,
+        goldPoint
+      ]
+    })
+
     const butteBlocks = new GroupLayer ({
       title: "SBM Surface Blocks",
       visibilityMode: "independent",
       visible: false, 
       layers: [
         emmaBlock,
+        goldBlock,
         ferrylanePoly,
       ]
     })

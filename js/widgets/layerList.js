@@ -21,7 +21,10 @@ define([
           "Emma Block",
           "Emma Block Polygons",
           "Emma Block Points",
-          "BJS Ferry Lane Polygons"
+          "BJS Ferry Lane Polygons",
+          "Goldsmith Block",
+          "Goldmsith Block Polygons",
+          "Goldsmith Block Points",
         ];
 
         if (!visibleLayers.includes(item.title)) {
