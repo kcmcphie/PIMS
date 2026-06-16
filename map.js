@@ -6,18 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "esri/layers/GroupLayer",
 
     "./js/layers/labels.js",
-    "./js/layers/hillshade.js",
-    "./js/layers/states.js",
-    "./js/layers/world.js",
-    "./js/layers/land.js",
-    "./js/layers/oceans.js",
-    "./js/layers/lakes.js",
-    "./js/layers/rivers.js",
-    "./js/layers/roads.js",
-    "./js/layers/plss.js",
-    "./js/layers/headframes.js",
-    "./js/layers/sbparcels.js",
-    "./js/layers/contours.js",
+    "./js/layers/basemap/hillshade.js",
+    "./js/layers/basemap/states.js",
+    "./js/layers/basemap/world.js",
+    "./js/layers/basemap/land.js",
+    "./js/layers/basemap/oceans.js",
+    "./js/layers/basemap/lakes.js",
+    "./js/layers/basemap/rivers.js",
+    "./js/layers/basemap/roads.js",
+    "./js/layers/butte/plss.js",
+    "./js/layers/butte/headframes.js",
+    "./js/layers/butte/sbparcels.js",
+    "./js/layers/butte/contours.js",
+    "./js/layers/butte/butte_blocks/emmablock_poly.js",
+    "./js/layers/butte/butte_blocks/emmablock_point.js",
+    "./js/layers/butte/butte_blocks/bjs_ferrylane_poly.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -44,6 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
     headframesLayer,
     parcelsLayer,
     contoursLayer,
+
+    emmaPoly,
+    emmaPoint,
+    ferrylanePoly,
 
     createScaleBar,
     createLayerList,
@@ -74,10 +81,30 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     });
 
+    const emmaBlock = new GroupLayer({
+      title: "Emma Block",
+      visibilitymode: "independent",
+      layers:[
+        emmaPoly,
+        emmaPoint
+      ]
+    })
+
+    const butteBlocks = new GroupLayer ({
+      title: "SBM Surface Blocks",
+      visibilityMode: "independent",
+      visible: false, 
+      layers: [
+        emmaBlock,
+        ferrylanePoly,
+      ]
+    })
+
     map.add(customBasemap);
     map.add(parcelsLayer);
     map.add(contoursLayer);
     map.add(butte_plss);
+    map.add(butteBlocks),
     map.add(headframesLayer);
     map.add(labelsLayer);
 

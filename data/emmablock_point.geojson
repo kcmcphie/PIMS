@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Layer 1-BLOCK - EMMA-ISLV",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Emma Block" }, "geometry": { "type": "Point", "coordinates": [ -112.5549011, 46.0125484, 1925.287037 ] } },
+{ "type": "Feature", "properties": { "Name": "Golden Crown" }, "geometry": { "type": "Point", "coordinates": [ -112.5367071, 45.976965, -5.572872 ] } },
+{ "type": "Feature", "properties": { "Name": "Cash Entry No700" }, "geometry": { "type": "Point", "coordinates": [ -112.5186499, 45.9879523, -5.572872 ] } },
+{ "type": "Feature", "properties": { "Name": "Lawlor&Kemper Placer" }, "geometry": { "type": "Point", "coordinates": [ -112.540513, 45.9548258, -5.572872 ] } },
+{ "type": "Feature", "properties": { "Name": "Fairhaven Placer" }, "geometry": { "type": "Point", "coordinates": [ -112.5398041, 45.9515825, -5.572872 ] } },
+{ "type": "Feature", "properties": { "Name": "Salie B Placer" }, "geometry": { "type": "Point", "coordinates": [ -112.5393173, 45.9474149, -5.572872 ] } },
+{ "type": "Feature", "properties": { "Name": "Philadelphia Placer" }, "geometry": { "type": "Point", "coordinates": [ -112.5404144, 45.9587134, -5.572872 ] } }
+]
+}

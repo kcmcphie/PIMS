@@ -16,7 +16,12 @@ define([
           "PLSS Sections",
           "Headframes",
           "Silverbow Parcels",
-          "Contours"
+          "Contours",
+          "SBM Surface Blocks", 
+          "Emma Block",
+          "Emma Block Polygons",
+          "Emma Block Points",
+          "BJS Ferry Lane Polygons"
         ];
 
         if (!visibleLayers.includes(item.title)) {
