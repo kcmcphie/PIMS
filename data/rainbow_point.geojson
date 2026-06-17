@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"name": "Layer 1-BLOCK - RAINBOW",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Rainbow Block" }, "geometry": { "type": "Point", "coordinates": [ -112.5408174, 46.0285573, 1925.287037 ] } }
+]
+}

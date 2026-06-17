@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"name": "Layer 1-BLOCK - MARGET ANN",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Marget Ann Block" }, "geometry": { "type": "Point", "coordinates": [ -112.5534378, 46.038953, 1925.287037 ] } }
+]
+}
