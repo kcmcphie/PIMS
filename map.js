@@ -18,11 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/butte/headframes.js",
     "./js/layers/butte/sbparcels.js",
     "./js/layers/butte/contours.js",
+
     "./js/layers/butte/butte_blocks/emmablock_poly.js",
     "./js/layers/butte/butte_blocks/emmablock_point.js",
     "./js/layers/butte/butte_blocks/bjs_ferrylane_poly.js",
     "./js/layers/butte/butte_blocks/goldsmith_poly.js",
     "./js/layers/butte/butte_blocks/goldsmith_point.js",
+    "./js/layers/butte/butte_blocks/claims_greatrep_poly.js",
+    "./js/layers/butte/butte_blocks/claims_margetann_poly.js",
+    "./js/layers/butte/butte_blocks/claims_rainbow_poly.js",
+    "./js/layers/butte/butte_blocks/greatrep_point.js",
+    "./js/layers/butte/butte_blocks/greatrep_poly.js",
+    "./js/layers/butte/butte_blocks/margetann_point.js",
+    "./js/layers/butte/butte_blocks/margetann_poly.js",
+    "./js/layers/butte/butte_blocks/rainbow_point.js",
+    "./js/layers/butte/butte_blocks/rainbow_poly.js",
+    "./js/layers/butte/butte_blocks/travona_point.js",
+    "./js/layers/butte/butte_blocks/travona_poly.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -55,6 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ferrylanePoly,
     goldPoly,
     goldPoint,
+    claimsGreatrepPoly,
+    claimsMargetannPoly,
+    claimsRainbowPoly,
+    greatrepPoint,
+    greatrepPoly,
+    margetannPoint,
+    margetannPoly,
+    rainbowPoint,
+    rainbowPoly,
+    travonaPoint,
+    travonaPoly,
 
     createScaleBar,
     createLayerList,
@@ -103,6 +126,42 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     })
 
+    const greatrepBlock = new GroupLayer({
+      title: "Great Republic Block",
+      visibilityMode: "independent",
+      layers: [
+        greatrepPoint,
+        greatrepPoly
+      ]
+    })
+
+    const margetannBlock = new GroupLayer({
+      title: "Marget Ann Block",
+      visibilityMode: "independent",
+      layers: [
+        margetannPoint,
+        margetannPoly
+      ]
+    })
+
+    const rainbowBlock = new GroupLayer({
+      title: "Rainbow Block",
+      visibilityMode: "independent",
+      layers: [
+        rainbowPoint,
+        rainbowPoly
+      ]
+    })
+
+    const travonaBlock = new GroupLayer({
+      title: "Travona Block",
+      visibilityMode: "independent",
+      layers: [
+        travonaPoint,
+        travonaPoly
+      ]
+    })
+
     const butteBlocks = new GroupLayer ({
       title: "SBM Surface Blocks",
       visibilityMode: "independent",
@@ -110,7 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
       layers: [
         emmaBlock,
         goldBlock,
+        greatrepBlock,
+        margetannBlock,
+        rainbowBlock,
+        travonaBlock,
         ferrylanePoly,
+        claimsGreatrepPoly,
+        claimsMargetannPoly,
+        claimsRainbowPoly
       ]
     })
 

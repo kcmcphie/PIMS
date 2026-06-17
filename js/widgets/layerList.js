@@ -25,6 +25,21 @@ define([
           "Goldsmith Block",
           "Goldmsith Block Polygons",
           "Goldsmith Block Points",
+          "Claims Great Republic Polygons",
+          "Claims Marget Ann Polygons",
+          "Claims Rainbow Polygons",
+          "Great Republic Block",
+          "Great Republic Points",
+          "Great Replublic Polygons",
+          "Marget Ann Block",
+          "Marget Ann Points",
+          "Marget Ann Polygons",
+          "Rainbow Block",
+          "Rainbow Points",
+          "Rainbow Polygons",
+          "Travona Block",
+          "Travona Points",
+          "Travona Polygons"
         ];
 
         if (!visibleLayers.includes(item.title)) {
