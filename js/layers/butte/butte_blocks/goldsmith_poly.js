@@ -12,9 +12,9 @@ define([
       type: "simple",
       symbol: {
           type: "simple-fill",
-          color: [0, 255, 0, 0.15],
+          color: [255, 191, 0, 0.15],
           outline: {
-          color: [0, 255, 0],
+          color: [255, 191, 0],
           width: 1.5
           }
       }
