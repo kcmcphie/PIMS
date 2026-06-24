@@ -40,7 +40,7 @@ define([
           "Travona Block",
           "Travona Points",
           "Travona Polygons",
-          "CIB WB",
+          "CIV WB",
           "CIV WB Polygons",
           "CIV WB Points",
           "CIV WB Lines"

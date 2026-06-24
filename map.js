@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const civwbGroup = new GroupLayer ({
       title: "CIV WB",
       visibilityMode: "independent",
-      //visible: false,
+      visible: false,
       layers: [
         civwbPoint,
         civwbPoly,
