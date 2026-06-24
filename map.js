@@ -262,6 +262,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    document.getElementById("zoomPortMc").addEventListener("click", () => {
+      
+      view.goTo({
+        center: [-149.94355866699252, 61.2815532141017],
+        zoom: 13
+      });
+    });
+
   });
 
 });
