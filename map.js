@@ -172,8 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const butteBlocks = new GroupLayer ({
       title: "SBM Surface Blocks",
+      id: "sbm_group",
       visibilityMode: "independent",
-      visible: false, 
+      visible: true, 
       layers: [
         emmaBlock,
         goldBlock,
@@ -190,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const civwbGroup = new GroupLayer ({
       title: "CIV WB",
+      id: "civwb_group",
       visibilityMode: "independent",
       visible: false,
       layers: [
@@ -232,6 +234,33 @@ document.addEventListener("DOMContentLoaded", () => {
       "top-left"
     );
 
+    document.getElementById("zoomAnchorage").addEventListener("click", () => {
+      
+      const sbmGroup = view.map.findLayerById("sbm_group");
+      const civwbGroup = view.map.findLayerById("civwb_group");
+
+      sbmGroup.visible = false;
+      civwbGroup.visible = true;
+      
+      view.goTo({
+        center: [-151.40680024414047, 61.8492427503479],
+        zoom: 8
+      });
+    });
+
+    document.getElementById("zoomButte").addEventListener("click", () => {
+      
+      const sbmGroup = view.map.findLayerById("sbm_group");
+      const civwbGroup = view.map.findLayerById("civwb_group");
+
+      sbmGroup.visible = true;
+      civwbGroup.visible = false;
+      
+      view.goTo({
+        center: [-112.53540861972655, 46.00615169799132],
+        zoom: 12
+      });
+    });
 
   });
 
