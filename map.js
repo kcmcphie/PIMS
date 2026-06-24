@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/butte/butte_blocks/travona_point.js",
     "./js/layers/butte/butte_blocks/travona_poly.js",
 
+    "./js/layers/alaska/CIV_WB_point.js",
+    "./js/layers/alaska/CIV_WB_poly.js",
+    "./js/layers/alaska/CIV_WB_line.js",
+
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
     "./js/widgets/legend.js",
@@ -79,6 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
     travonaPoint,
     travonaPoly,
 
+    civwbPoint,
+    civwbPoly,
+    civwbLine,
+
     createScaleBar,
     createLayerList,
     createLegend,
@@ -115,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         emmaPoly,
         emmaPoint
       ]
-    })
+    });
 
     const goldBlock = new GroupLayer({
       title: "Goldsmith Block",
@@ -124,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         goldPoly,
         goldPoint
       ]
-    })
+    });
 
     const greatrepBlock = new GroupLayer({
       title: "Great Republic Block",
@@ -133,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         greatrepPoint,
         greatrepPoly
       ]
-    })
+    });
 
     const margetannBlock = new GroupLayer({
       title: "Marget Ann Block",
@@ -142,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         margetannPoint,
         margetannPoly
       ]
-    })
+    });
 
     const rainbowBlock = new GroupLayer({
       title: "Rainbow Block",
@@ -151,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rainbowPoint,
         rainbowPoly
       ]
-    })
+    });
 
     const travonaBlock = new GroupLayer({
       title: "Travona Block",
@@ -160,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         travonaPoint,
         travonaPoly
       ]
-    })
+    });
 
     const butteBlocks = new GroupLayer ({
       title: "SBM Surface Blocks",
@@ -178,13 +186,25 @@ document.addEventListener("DOMContentLoaded", () => {
         claimsMargetannPoly,
         claimsRainbowPoly
       ]
-    })
+    });
+
+    const civwbGroup = new GroupLayer ({
+      title: "CIV WB",
+      visibilityMode: "independent",
+      //visible: false,
+      layers: [
+        civwbPoint,
+        civwbPoly,
+        civwbLine
+      ]
+    });
 
     map.add(customBasemap);
     map.add(parcelsLayer);
     map.add(contoursLayer);
     map.add(butte_plss);
-    map.add(butteBlocks),
+    map.add(butteBlocks);
+    map.add(civwbGroup);
     map.add(headframesLayer);
     map.add(labelsLayer);
 

@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "CIV-WB",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Whiskey Bravo" }, "geometry": { "type": "Point", "coordinates": [ -152.5985719, 61.9588938, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Port MacKenzie" }, "geometry": { "type": "Point", "coordinates": [ -149.9169081, 61.2664445, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Port MacKenzie processing" }, "geometry": { "type": "Point", "coordinates": [ -149.9486872, 61.2848841, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Styx" }, "geometry": { "type": "Point", "coordinates": [ -153.0645115, 61.8316997, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Stibium" }, "geometry": { "type": "Point", "coordinates": [ -152.763338, 61.9636001, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Korbell" }, "geometry": { "type": "Point", "coordinates": [ -152.961416, 62.0031128, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RPM" }, "geometry": { "type": "Point", "coordinates": [ -152.9387928, 61.7754511, 0.0 ] } }
+]
+}

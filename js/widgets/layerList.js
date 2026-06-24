@@ -39,7 +39,11 @@ define([
           "Rainbow Polygons",
           "Travona Block",
           "Travona Points",
-          "Travona Polygons"
+          "Travona Polygons",
+          "CIB WB",
+          "CIV WB Polygons",
+          "CIV WB Points",
+          "CIV WB Lines"
         ];
 
         if (!visibleLayers.includes(item.title)) {

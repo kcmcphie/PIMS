@@ -66,6 +66,10 @@ define([
         {
           layer: view.map.findLayerById("claims_rainbow_poly"),
           title: "Rainbow Claims"
+        },
+        {
+          layer: view.map.findLayerById("civwb_poly"),
+          title: "CIV WB"
         }
       ]
     });
