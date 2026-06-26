@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/basemap/lakes.js",
     "./js/layers/basemap/rivers.js",
     "./js/layers/basemap/roads.js",
-    "./js/layers/butte/plss.js",
+    "./js/layers/butte/butte_plss.js",
     "./js/layers/butte/headframes.js",
     "./js/layers/butte/sbparcels.js",
     "./js/layers/butte/contours.js",
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/alaska/CIV_WB_point.js",
     "./js/layers/alaska/CIV_WB_poly.js",
     "./js/layers/alaska/CIV_WB_line.js",
+    "./js/layers/alaska/portmc_plss.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -86,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     civwbPoint,
     civwbPoly,
     civwbLine,
+    portmc_plss,
 
     createScaleBar,
     createLayerList,
@@ -193,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "CIV WB",
       id: "civwb_group",
       visibilityMode: "independent",
-      visible: false,
+      visible: true,
       layers: [
         civwbPoint,
         civwbPoly,
@@ -201,13 +203,44 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     });
 
+    const butteGroup = new GroupLayer ({
+      title: "Butte, MT",
+      id: "butte_group",
+      visibilityMode: "independent",
+      visible: true,
+      layers: [
+        parcelsLayer,
+        contoursLayer,
+        butte_plss,
+        butteBlocks,
+        headframesLayer
+      ]
+    });
+
+    const anchorGroup = new GroupLayer ({
+      title: "Anchorage, AK",
+      id: "anchor_group",
+      visibilityMode: "independent",
+      visible: false,
+      layers: [
+        civwbGroup
+      ]
+    });
+
+    const portMcGroup = new GroupLayer({
+      title: "Port MacKenzie, AK",
+      id: "portMc_group",
+      visibilityMode: "independent",
+      visible: false,
+      layers: [
+        portmc_plss
+      ]
+    });
+
     map.add(customBasemap);
-    map.add(parcelsLayer);
-    map.add(contoursLayer);
-    map.add(butte_plss);
-    map.add(butteBlocks);
-    map.add(civwbGroup);
-    map.add(headframesLayer);
+    map.add(butteGroup);
+    map.add(anchorGroup);
+    map.add(portMcGroup);
     map.add(labelsLayer);
 
   
@@ -236,11 +269,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("zoomAnchorage").addEventListener("click", () => {
       
-      const sbmGroup = view.map.findLayerById("sbm_group");
-      const civwbGroup = view.map.findLayerById("civwb_group");
+      const butteGroup = view.map.findLayerById("butte_group");
+      const anchorGroup = view.map.findLayerById("anchor_group");
 
-      sbmGroup.visible = false;
-      civwbGroup.visible = true;
+      butteGroup.visible = false;
+      anchorGroup.visible = true;
       
       view.goTo({
         center: [-151.40680024414047, 61.8492427503479],
@@ -250,11 +283,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("zoomButte").addEventListener("click", () => {
       
-      const sbmGroup = view.map.findLayerById("sbm_group");
-      const civwbGroup = view.map.findLayerById("civwb_group");
+      const butteGroup = view.map.findLayerById("butte_group");
+      const anchorGroup = view.map.findLayerById("anchor_group");
 
-      sbmGroup.visible = true;
-      civwbGroup.visible = false;
+      butteGroup.visible = true;
+      anchorGroup.visible = false;
       
       view.goTo({
         center: [-112.53540861972655, 46.00615169799132],

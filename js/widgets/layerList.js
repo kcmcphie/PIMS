@@ -13,7 +13,8 @@ define([
         const item = event.item;
 
         const visibleLayers = [
-          "PLSS Sections",
+          "Butte, MT",
+          "Butte PLSS Sections",
           "Headframes",
           "Silverbow Parcels",
           "Contours",
@@ -40,10 +41,13 @@ define([
           "Travona Block",
           "Travona Points",
           "Travona Polygons",
+          "Anchorage, AK",
           "CIV WB",
           "CIV WB Polygons",
           "CIV WB Points",
-          "CIV WB Lines"
+          "CIV WB Lines",
+          "Port MacKenzie, AK",
+          "Port MacKenzie PLSS Sections"
         ];
 
         if (!visibleLayers.includes(item.title)) {

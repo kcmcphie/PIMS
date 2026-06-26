@@ -4,7 +4,7 @@ define([
 
   const butte_plss = new GeoJSONLayer({
 
-    title: "PLSS Sections",
+    title: "Butte PLSS Sections",
 
     id: "butte_plss",
 
