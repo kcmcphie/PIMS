@@ -18,7 +18,27 @@ define([
           width: 1.5
           }
       }
-    }
+    },
+
+        labelingInfo: [{
+      labelExpressionInfo: {
+        expression: "$feature.Name"
+      },
+      symbol: {
+        type: "text",
+        color: [255, 0, 0],
+        haloColor: [255, 255, 255],  
+        haloSize: 2,
+        yoffset: 80,
+        font: {
+          size: 18,
+          family: "Arial",
+          weight: "bold"
+        }
+      }
+    }],
+
+    labelsVisible: true
 
   });
 
