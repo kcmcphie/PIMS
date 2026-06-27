@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/alaska/CIV_WB_poly.js",
     "./js/layers/alaska/CIV_WB_line.js",
     "./js/layers/alaska/portmc_plss.js",
+    "./js/layers/alaska/portmc_parcels.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -88,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     civwbPoly,
     civwbLine,
     portmc_plss,
+    portmc_parcels,
 
     createScaleBar,
     createLayerList,
@@ -233,7 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
       visibilityMode: "independent",
       visible: false,
       layers: [
-        portmc_plss
+        portmc_plss,
+        portmc_parcels,
       ]
     });
 

@@ -47,7 +47,8 @@ define([
           "CIV WB Points",
           "CIV WB Lines",
           "Port MacKenzie, AK",
-          "Port MacKenzie PLSS Sections"
+          "Port MacKenzie PLSS Sections",
+          "Port MacKenzie Parcels"
         ];
 
         if (!visibleLayers.includes(item.title)) {
