@@ -17,7 +17,7 @@ define([
           "Butte PLSS Sections",
           "Headframes",
           "Silverbow Parcels",
-          "Contours",
+          "Butte Contours",
           "SBM Surface Blocks", 
           "Emma Block",
           "Emma Block Polygons",
@@ -48,7 +48,8 @@ define([
           "CIV WB Lines",
           "Port MacKenzie, AK",
           "Port MacKenzie PLSS Sections",
-          "Port MacKenzie Parcels"
+          "Port MacKenzie Parcels",
+          "Port MacKenzie Contours"
         ];
 
         if (!visibleLayers.includes(item.title)) {

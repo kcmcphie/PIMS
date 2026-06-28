@@ -3,11 +3,11 @@ define([
 ], function(GeoJSONLayer) {
 
   return new GeoJSONLayer({
-    id: "contours",
+    id: "portmc_contours",
 
-    title: "Butte Contours",
+    title: "Port MacKenzie Contours",
 
-    url: "./data/contours.geojson",
+    url: "./data/portmc_contours.geojson",
 
     visible: false,
 

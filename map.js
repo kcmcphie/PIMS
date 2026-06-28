@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./js/layers/alaska/CIV_WB_line.js",
     "./js/layers/alaska/portmc_plss.js",
     "./js/layers/alaska/portmc_parcels.js",
+    "./js/layers/alaska/portmc_contours.js",
 
     "./js/widgets/scalebar.js",
     "./js/widgets/layerList.js",
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     civwbLine,
     portmc_plss,
     portmc_parcels,
+    portmc_contours,
 
     createScaleBar,
     createLayerList,
@@ -237,6 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       layers: [
         portmc_plss,
         portmc_parcels,
+        portmc_contours,
       ]
     });
 
