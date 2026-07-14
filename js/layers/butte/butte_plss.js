@@ -2,7 +2,7 @@ define([
   "esri/layers/GeoJSONLayer"
 ], function(GeoJSONLayer) {
 
-  const butte_plss = new GeoJSONLayer({
+  return new GeoJSONLayer({
 
     title: "Butte PLSS Sections",
 
@@ -21,7 +21,7 @@ define([
         color: [0, 0, 0, 0],
 
         outline: {
-          color: [100, 100, 100, 1],
+          color: [25, 26, 28, 1],
           width: 1
         }
       }
@@ -36,7 +36,7 @@ define([
       symbol: {
         type: "text",
 
-        color: [60, 60, 60, 1],
+        color: [25, 26, 28, 1],
 
         haloColor: [255, 255, 255, 1],
         haloSize: 1.5,
@@ -56,7 +56,5 @@ define([
     minScale: 10000000
 
   });
-
-  return butte_plss;
 
 });

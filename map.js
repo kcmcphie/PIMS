@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const customBasemap = new GroupLayer({
       title: "Custom Basemap",
       visibilityMode: "independent",
-      visible: true,
+      visible: false,
       layers: [
         worldLayer,
         landLayer,
@@ -277,9 +277,11 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const butteGroup = view.map.findLayerById("butte_group");
       const anchorGroup = view.map.findLayerById("anchor_group");
+      const portmcGroup = view.map.findLayerById("portMc_group");
 
       butteGroup.visible = false;
       anchorGroup.visible = true;
+      portmcGroup.visible = false;
       
       view.goTo({
         center: [-151.40680024414047, 61.8492427503479],
@@ -291,9 +293,11 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const butteGroup = view.map.findLayerById("butte_group");
       const anchorGroup = view.map.findLayerById("anchor_group");
+      const portmcGroup = view.map.findLayerById("portMc_group");
 
       butteGroup.visible = true;
       anchorGroup.visible = false;
+      portmcGroup.visibile = false;
       
       view.goTo({
         center: [-112.53540861972655, 46.00615169799132],
@@ -302,6 +306,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("zoomPortMc").addEventListener("click", () => {
+
+      const butteGroup = view.map.findLayerById("butte_group");
+      const anchorGroup = view.map.findLayerById("anchor_group");
+      const portmcGroup = view.map.findLayerById("portMc_group");
+
+      butteGroup.visible = false;
+      anchorGroup.visible = false;
+      portmcGroup.visible = true;
       
       view.goTo({
         center: [-149.94355866699252, 61.2815532141017],

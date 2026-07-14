@@ -2,7 +2,7 @@ define([
   "esri/layers/GeoJSONLayer"
 ], function(GeoJSONLayer) {
 
-  const portmc_plss = new GeoJSONLayer({
+  return new GeoJSONLayer({
 
     title: "Port MacKenzie PLSS Sections",
 
@@ -21,16 +21,40 @@ define([
         color: [0, 0, 0, 0],
 
         outline: {
-          color: [100, 100, 100, 1],
+          color: [25, 26, 28, 1],
           width: 1
         }
       }
     },
 
-    //figure out labels
+    labelingInfo: [{
+
+      labelExpressionInfo: {
+        expression: "$feature.SECTION"
+      },
+
+      symbol: {
+        type: "text",
+
+        color: [25, 26, 28, 1],
+
+        haloColor: [255, 255, 255, 1],
+        haloSize: 1.5,
+
+        font: {
+          family: "Arial",
+          size: 10
+        }
+      },
+
+      labelPlacement: "always-horizontal"
+
+    }],
+
+    labelsVisible: true,
+
+    minScale: 10000000
 
   });
-
-  return portmc_plss;
 
 });

@@ -9,7 +9,7 @@ define([
 
     url: "./data/portmc_parcels.geojson",
 
-    visible: false,
+    visible: true,
 
     renderer: {
       type: "simple",

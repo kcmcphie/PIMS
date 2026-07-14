@@ -7,7 +7,7 @@ define([], function() {
     button.innerHTML = "Toggle Basemap";
     button.className = "esri-widget esri-button";
 
-    let customBasemapEnabled = true;
+    let customBasemapEnabled = false;
 
     button.addEventListener("click", () => {
 
