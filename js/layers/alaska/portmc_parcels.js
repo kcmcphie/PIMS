@@ -17,10 +17,10 @@ define([
       symbol: {
         type: "simple-fill",
 
-        color: [0, 0, 0, 0],
+        color: [58, 15, 69, 0.2],
 
         outline: {
-          color: [61, 108, 62, 1],
+          color: [58, 15, 69, 1],
           width: 0.75
         }
       }
