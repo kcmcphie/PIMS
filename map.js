@@ -258,6 +258,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.view = view;
 
+    view.container = "fullscreenMap";
+
+    setTimeout(() => {
+        view.resize();
+    }, 0);
+
+    view.container = "map";
+
+    setTimeout(() => {
+        view.resize();
+    }, 0);
+
+    const container = document.getElementById("container");
+    const fullscreen = document.getElementById("fullscreenView");
+
+    document
+    .getElementById("fullscreenBtn")
+    .addEventListener("click", () => {
+
+        container.style.display = "none";
+
+        fullscreen.classList.remove("hidden");
+
+        view.container = "fullscreenMap";
+
+    });
+
+    document
+    .getElementById("returnToLayout")
+    .addEventListener("click", () => {
+
+        fullscreen.classList.add("hidden");
+
+        container.style.display = "";
+
+        view.container = "map";
+
+    });
+
     view.when(() => {
       map.basemap.referenceLayers.removeAll();
     });
@@ -297,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       butteGroup.visible = true;
       anchorGroup.visible = false;
-      portmcGroup.visibile = false;
+      portmcGroup.visible = false;
       
       view.goTo({
         center: [-112.53540861972655, 46.00615169799132],
