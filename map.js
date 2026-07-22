@@ -258,18 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.view = view;
 
-    view.container = "fullscreenMap";
-
-    setTimeout(() => {
-        view.resize();
-    }, 0);
-
-    view.container = "map";
-
-    setTimeout(() => {
-        view.resize();
-    }, 0);
-
     const container = document.getElementById("container");
     const fullscreen = document.getElementById("fullscreenView");
 
